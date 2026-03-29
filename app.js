@@ -101,6 +101,11 @@ app.use((req, res, next) => {
   next();
 });
 
+//root route
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
+
 // jhan bhi /listing aayega wha listings use krege
 app.use("/listings", listingRouter);
 
