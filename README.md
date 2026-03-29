@@ -229,7 +229,7 @@ Distributed under the **MIT License**.
 
 <div align="center">
 
-Made with ❤️ by [moaadil304](https://github.com/moaadil304)
+Made with ❤️ by [Mohammad Aadil ](https://github.com/moaadil304)
 
 **[⭐ Star this repo](https://github.com/moaadil304/wanderlust)** if you found it useful!
 
