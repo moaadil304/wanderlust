@@ -111,3 +111,84 @@ body{
      height: 400px;
      width: 80vh;
 }
+
+
+/* Responsive */
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+
+    /* map fix */
+    #map {
+        width: 100%;
+        height: 300px;
+    }
+
+    /* navbar spacing */
+    .navbar {
+        height: auto;
+        padding: 1rem;
+    }
+
+    /* buttons stack */
+    .btns {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    /* body padding for small screens */
+    body {
+        padding: 0 10px;
+    }
+
+    /* cards spacing */
+    .listing-card {
+        margin-bottom: 1.5rem;
+    }
+
+    /* image height control */
+    .card-img-top {
+        height: 200px;
+    }
+
+    /* show page image */
+    .show-img {
+        height: 25vh;
+    }
+
+    /* footer fix */
+    .f-info {
+        height: auto;
+        padding: 1rem 0;
+    }
+
+    .f-info-social,
+    .f-info-links,
+    .f-info-brand {
+        margin-bottom: 10px;
+    }
+
+    /* navbar links center */
+    .nav-link {
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+
+    /* buttons full width */
+    .btns button {
+        width: 100%;
+    }
+
+    /* map full width */
+    #map {
+        width: 100%;
+        height: 250px;
+    }
+}
