@@ -1,10 +1,20 @@
 <% layout("/layouts/boilerplate.ejs") %>
 
     <style>
+        #filter-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
         #filters {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             align-items: center;
+            overflow-x: auto;
+            /* enable horizontal scroll */
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            flex: 1;
         }
 
         .filter {
@@ -12,10 +22,12 @@
             margin-right: 2rem;
             margin-top: 2rem;
             opacity: 0.7;
+            flex-shrink: 0;
         }
 
         .filter:hover {
             opacity: 1;
+            color: #fe424d;
             cursor: pointer;
         }
 
@@ -23,77 +35,76 @@
             font-size: 0.8rem;
         }
 
-        .tax-info{
+        .tax-info {
             display: none;
         }
 
-        .tax-toggle{
-            border: 1px solid black;
+        .tax-toggle {
+            border: 1px solid #fe424d;
             border-radius: 1rem;
-            height: 3.25rem;
+            height: 3rem;
             padding: 1rem;
-            margin-left: 5rem;
+            margin-left: auto;
             display: flex;
-            align-items: center;
+            align-items:center;
+            /* flex-shrink: 0;    */
+            white-space: nowrap;
         }
     </style>
 
+    <div id="filter-wrapper">
+        <div id="filters">
+            <div class="filter">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>Trending</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-bed"></i></div>
+                <p>Rooms</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-mountain-city"></i></div>
+                <p>Iconic cities</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-mountain"></i></div>
+                <p>Mountains</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-brands fa-fort-awesome"></i></div>
+                <p>Castels</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-person-swimming"></i></div>
+                <p>Amazing Pools</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-bed"></i></div>
+                <p>Rooms</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-mountain-city"></i></div>
+                <p>Iconic cities</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-mountain"></i></div>
+                <p>Mountains</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-brands fa-fort-awesome"></i></div>
+                <p>Castels</p>
+            </div>
 
-    <div id="filters">
-        <div class="filter">
-            <div><i class="fa-solid fa-fire"></i></div>
-            <p>Trending</p>
-        </div>
-        <div class="filter">
-            <div><i class="fa-solid fa-bed"></i></div>
-            <p>Rooms</p>
-        </div>
-        <div class="filter">
-            <div><i class="fa-solid fa-mountain-city"></i></div>
-            <p>Iconic cities</p>
-        </div>
-        <div class="filter">
-            <div><i class="fa-solid fa-mountain"></i></div>
-            <p>Mountains</p>
-        </div>
-        <div class="filter">
-            <div><i class="fa-brands fa-fort-awesome"></i></div>
-            <p>Castels</p>
-        </div>
-        <div class="filter">
-            <div><i class="fa-solid fa-person-swimming"></i></div>
-            <p>Amazing Pools</p>
-        </div>
-        <div class="filter">
-            <div><i class="fa-solid fa-bed"></i></div>
-            <p>Rooms</p>
-        </div>
-        <div class="filter">
-            <div><i class="fa-solid fa-mountain-city"></i></div>
-            <p>Iconic cities</p>
-        </div>
-        <div class="filter">
-            <div><i class="fa-solid fa-mountain"></i></div>
-            <p>Mountains</p>
-        </div>
-        <div class="filter">
-            <div><i class="fa-brands fa-fort-awesome"></i></div>
-            <p>Castels</p>
-        </div>
-         
 
+
+
+        </div>
         <div class="tax-toggle">
-            <!-- <div class="form-check-reverse form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
-                <label class="form-check-label" for="switchCheckDefault">Default switch </label>
-            </div> -->
-
             <div class="form-check form-switch d-flex align-items-center gap-5">
-                <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
+                <label class="form-check-label" for="flexSwitchCheckDefault">Taxes</label>
                 <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
             </div>
         </div>
-
     </div>
 
     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
@@ -125,13 +136,13 @@
         let taxSwitch = document.getElementById("flexSwitchCheckDefault");
         taxSwitch.addEventListener("click", () => {
             let taxInfo = document.getElementsByClassName("tax-info");
-            for(info of taxInfo){
-                if(info.style.display != "inline"){
+            for (info of taxInfo) {
+                if (info.style.display != "inline") {
                     info.style.display = "inline";
-                }else{
+                } else {
                     info.style.display = "none";
                 }
-                 
+
             }
         });
     </script>
