@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Booking</title>
+</head>
+
+<body>
+
+    <h1>Booking Details</h1>
+
+    <h2>
+        <%= booking.listing.title %>
+    </h2>
+
+    <p>
+        Check-in:
+        <%= booking.checkIn.toDateString() %>
+    </p>
+
+    <p>
+        Check-out:
+        <%= booking.checkOut.toDateString() %>
+    </p>
+
+    <p>
+        Total:
+        ₹<%= booking.totalPrice %>
+    </p>
+
+    <p>
+        Payment Status:
+        <%= booking.paymentStatus %>
+    </p>
+
+    <p>
+        Booking Status:
+        <%= booking.bookingStatus %>
+    </p>
+
+    <% if (booking.paymentStatus==="pending" ) { %>
+
+        <form action="/payment/create-order" method="POST">
+
+            <input type="hidden" name="bookingId" value="<%= booking._id %>">
+
+            <button type="submit">
+                Pay ₹<%= booking.totalPrice %>
+            </button>
+
+        </form>
+
+        <% } %>
+
+</body>
+
+</html>

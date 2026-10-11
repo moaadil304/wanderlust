@@ -10,7 +10,7 @@
                 <h3>
                     <%= listing.title %>
                 </h3>
-                <div class="card col-8   show-card listing-card">
+                <div class="card col-12   show-card listing-card">
                     <img src="<%= listing.image.url %>" class="card-img-top show-img" alt="listing-image">
 
                     <div class="card-body">
@@ -32,6 +32,43 @@
             </form>
         </div>
         <% } %>
+
+        <hr>
+        <!-- booking *********** -->
+        <div class="col-12 col-md-10 col-lg-8 mx-auto mb-3"> 
+        <div class="booking-box">
+        
+            <h3>Book this place</h3>
+        
+            <form action="/bookings" method="POST">
+                
+                <input type="hidden" name="listingId" value="<%= listing._id %>">
+        
+                <div class="mb-3">
+                    <label for="checkIn" class="form-label">
+                        Check-in
+                    </label>
+        
+                    <input type="date" id="checkIn" name="checkIn" required>
+                </div>
+        
+                <div class="mb-3">
+                    <label for="checkOut" class="form-label">
+                        Check-out
+                    </label>
+        
+                    <input type="date" id="checkOut" name="checkOut" required>
+                </div>
+        
+                <button class="btn btn-dark add-btn" type="submit">
+                    Book Now
+                </button>
+        
+            </form>
+        
+        </div>
+        </div>
+        <hr>
     
         
         <!-- <div class="col-8 offset-3 mb-3"> -->
@@ -68,6 +105,8 @@
             </form>
             <% } %>
             <hr>
+
+             
 
             <% if(listing.reviews.length > 0) {  %>
             <div class="row"> 

@@ -1,524 +1,655 @@
+ 
 const sampleListings = [
   {
-    title: "Umaid Bhawan Palace",
+    title: "Taj Mahal View Haveli",
     description:
-      "One of the world's largest private residences, this royal palace offers Art Deco grandeur, sprawling lawns, and unmatched luxury.",
+      "A heritage haveli with rooftop dining and a sunrise view of the white marble Taj Mahal.",
     image: {
-      url: "https://loremflickr.com/1200/800/palace,architecture,exterior/all?lock=1",
-      filename: "wanderlust_DEV/umaid_bhawan",
+      url: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/taj_mahal_view_haveli",
     },
-    price: 25000,
-    location: "Jodhpur",
+    price: 12000,
+    location: "Agra",
     country: "India",
-    geometry: { type: "Point", coordinates: [73.0243, 26.2867] },
+    geometry: { type: "Point", coordinates: [78.0421, 27.1751] },
   },
   {
-    title: "City Palace Udaipur",
+    title: "Hawa Mahal Terrace Stay",
     description:
-      "A majestic palace complex overlooking Lake Pichola, blending Rajasthani and Mughal architecture with breathtaking courtyards.",
+      "Pink City rooftop rooms facing the iconic Hawa Mahal with traditional Rajasthani breakfast.",
     image: {
-      url: "https://loremflickr.com/1200/800/luxury,mansion,building/all?lock=2",
-      filename: "wanderlust_DEV/city_palace_udaipur",
-    },
-    price: 18000,
-    location: "Udaipur",
-    country: "India",
-    geometry: { type: "Point", coordinates: [73.6833, 24.5764] },
-  },
-  {
-    title: "Mysore Palace Heritage Stay",
-    description:
-      "Experience royal Wodeyar-era hospitality steps away from the iconic illuminated Mysore Palace.",
-    image: {
-      url: "https://loremflickr.com/1200/800/hotel,bedroom,interior/all?lock=3",
-      filename: "wanderlust_DEV/mysore_palace",
-    },
-    price: 14500,
-    location: "Mysore",
-    country: "India",
-    geometry: { type: "Point", coordinates: [76.6552, 12.3052] },
-  },
-  {
-    title: "Amber Fort Palace Retreat",
-    description:
-      "Stay near the golden-hued Amber Fort with panoramic hill views and Rajputana charm.",
-    image: {
-      url: "https://loremflickr.com/1200/800/villa,resort,building/all?lock=4",
-      filename: "wanderlust_DEV/amber_fort",
-    },
-    price: 12500,
-    location: "Jaipur",
-    country: "India",
-    geometry: { type: "Point", coordinates: [75.8513, 26.9855] },
-  },
-  {
-    title: "Lake Palace Suite",
-    description:
-      "A floating marble palace on Lake Pichola offering unmatched romance and serenity.",
-    image: {
-      url: "https://loremflickr.com/1200/800/palace,courtyard,architecture/all?lock=5",
-      filename: "wanderlust_DEV/lake_palace",
-    },
-    price: 32000,
-    location: "Udaipur",
-    country: "India",
-    geometry: { type: "Point", coordinates: [73.68, 24.5745] },
-  },
-  {
-    title: "Falaknuma Palace",
-    description:
-      "A scorpion-shaped palace perched atop a hill, offering Nizami elegance and panoramic views of Hyderabad.",
-    image: {
-      url: "https://loremflickr.com/1200/800/palace,architecture,exterior/all?lock=6",
-      filename: "wanderlust_DEV/falaknuma",
-    },
-    price: 27500,
-    location: "Hyderabad",
-    country: "India",
-    geometry: { type: "Point", coordinates: [78.4867, 17.3617] },
-  },
-  {
-    title: "Neemrana Fort Palace",
-    description:
-      "A 15th-century hill fort turned heritage hotel with terraced courtyards and infinity pools.",
-    image: {
-      url: "https://loremflickr.com/1200/800/luxury,mansion,building/all?lock=7",
-      filename: "wanderlust_DEV/neemrana",
-    },
-    price: 9800,
-    location: "Alwar",
-    country: "India",
-    geometry: { type: "Point", coordinates: [76.39, 27.9833] },
-  },
-  {
-    title: "Rambagh Palace",
-    description:
-      "Once the residence of the Maharaja of Jaipur, now a grand heritage hotel with lush Mughal gardens.",
-    image: {
-      url: "https://loremflickr.com/1200/800/hotel,bedroom,interior/all?lock=8",
-      filename: "wanderlust_DEV/rambagh",
-    },
-    price: 22000,
-    location: "Jaipur",
-    country: "India",
-    geometry: { type: "Point", coordinates: [75.8081, 26.8992] },
-  },
-  {
-    title: "Taj Lake Palace View Room",
-    description:
-      "Elegant rooms with direct views of the iconic white marble palace floating on Lake Pichola.",
-    image: {
-      url: "https://loremflickr.com/1200/800/villa,resort,building/all?lock=9",
-      filename: "wanderlust_DEV/taj_lake_view",
-    },
-    price: 19500,
-    location: "Udaipur",
-    country: "India",
-    geometry: { type: "Point", coordinates: [73.6789, 24.5751] },
-  },
-  {
-    title: "Jai Vilas Palace Wing",
-    description:
-      "Stay in a wing of this Italianate palace, home to one of the world's largest chandeliers.",
-    image: {
-      url: "https://loremflickr.com/1200/800/palace,courtyard,architecture/all?lock=10",
-      filename: "wanderlust_DEV/jai_vilas",
-    },
-    price: 15500,
-    location: "Gwalior",
-    country: "India",
-    geometry: { type: "Point", coordinates: [78.1828, 26.2124] },
-  },
-  {
-    title: "Chandra Mahal Heritage Suite",
-    description:
-      "Live like royalty in this Jaipur landmark palace with hand-painted frescoes and mirror work.",
-    image: {
-      url: "https://loremflickr.com/1200/800/palace,architecture,exterior/all?lock=11",
-      filename: "wanderlust_DEV/chandra_mahal",
-    },
-    price: 21000,
-    location: "Jaipur",
-    country: "India",
-    geometry: { type: "Point", coordinates: [75.8236, 26.9258] },
-  },
-  {
-    title: "Deogarh Mahal",
-    description:
-      "A 17th-century hilltop palace overlooking the Aravalli hills and a serene lake.",
-    image: {
-      url: "https://loremflickr.com/1200/800/luxury,mansion,building/all?lock=12",
-      filename: "wanderlust_DEV/deogarh_mahal",
-    },
-    price: 11000,
-    location: "Deogarh",
-    country: "India",
-    geometry: { type: "Point", coordinates: [73.9167, 25.5333] },
-  },
-  {
-    title: "Shiv Niwas Palace",
-    description:
-      "Former royal guesthouse with domed cupolas, courtyards, and lakeside luxury.",
-    image: {
-      url: "https://loremflickr.com/1200/800/hotel,bedroom,interior/all?lock=13",
-      filename: "wanderlust_DEV/shiv_niwas",
-    },
-    price: 17500,
-    location: "Udaipur",
-    country: "India",
-    geometry: { type: "Point", coordinates: [73.6822, 24.5769] },
-  },
-  {
-    title: "Bikaner Junagarh Palace Stay",
-    description:
-      "Desert-fort palace hospitality with intricately carved sandstone architecture.",
-    image: {
-      url: "https://loremflickr.com/1200/800/villa,resort,building/all?lock=14",
-      filename: "wanderlust_DEV/junagarh",
-    },
-    price: 9500,
-    location: "Bikaner",
-    country: "India",
-    geometry: { type: "Point", coordinates: [73.3119, 28.0229] },
-  },
-  {
-    title: "Padmanabhapuram Palace Cottage",
-    description:
-      "Traditional Kerala wooden palace architecture surrounded by tropical greenery.",
-    image: {
-      url: "https://loremflickr.com/1200/800/palace,courtyard,architecture/all?lock=15",
-      filename: "wanderlust_DEV/padmanabhapuram",
+      url: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/hawa_mahal_terrace_stay",
     },
     price: 8500,
-    location: "Thuckalay",
-    country: "India",
-    geometry: { type: "Point", coordinates: [77.2333, 8.2333] },
-  },
-  {
-    title: "Cooch Behar Palace Residency",
-    description:
-      "Neoclassical royal palace inspired by London's Buckingham Palace, set in Bengal's greenery.",
-    image: {
-      url: "https://loremflickr.com/1200/800/palace,architecture,exterior/all?lock=16",
-      filename: "wanderlust_DEV/cooch_behar",
-    },
-    price: 9200,
-    location: "Cooch Behar",
-    country: "India",
-    geometry: { type: "Point", coordinates: [89.4483, 26.32] },
-  },
-  {
-    title: "Wankaner Palace",
-    description:
-      "A blend of Victorian, Mughal and Rajput styles with vintage car collections and heritage charm.",
-    image: {
-      url: "https://loremflickr.com/1200/800/luxury,mansion,building/all?lock=17",
-      filename: "wanderlust_DEV/wankaner",
-    },
-    price: 10500,
-    location: "Wankaner",
-    country: "India",
-    geometry: { type: "Point", coordinates: [70.95, 22.6167] },
-  },
-  {
-    title: "Laxmi Vilas Palace Wing",
-    description:
-      "One of the largest private residences in the world, showcasing Indo-Saracenic architecture.",
-    image: {
-      url: "https://loremflickr.com/1200/800/hotel,bedroom,interior/all?lock=18",
-      filename: "wanderlust_DEV/laxmi_vilas",
-    },
-    price: 16500,
-    location: "Vadodara",
-    country: "India",
-    geometry: { type: "Point", coordinates: [73.1935, 22.3126] },
-  },
-  {
-    title: "Nahargarh Palace View Stay",
-    description:
-      "Hilltop palace fort with sweeping sunset views over the Pink City.",
-    image: {
-      url: "https://loremflickr.com/1200/800/villa,resort,building/all?lock=19",
-      filename: "wanderlust_DEV/nahargarh",
-    },
-    price: 13000,
     location: "Jaipur",
     country: "India",
-    geometry: { type: "Point", coordinates: [75.8154, 26.9373] },
+    geometry: { type: "Point", coordinates: [75.8267, 26.9239] },
   },
   {
-    title: "Bundi Garh Palace",
+    title: "Kerala Backwater Houseboat",
     description:
-      "A dramatic cliffside palace famed for its murals, stepwells, and labyrinthine corridors.",
+      "A private teak houseboat drifting through quiet palm-lined backwaters with a chef on board.",
     image: {
-      url: "https://loremflickr.com/1200/800/palace,courtyard,architecture/all?lock=20",
-      filename: "wanderlust_DEV/bundi_garh",
+      url: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/kerala_backwater_houseboat",
     },
-    price: 8900,
-    location: "Bundi",
+    price: 9000,
+    location: "Alleppey",
     country: "India",
-    geometry: { type: "Point", coordinates: [75.6333, 25.4333] },
+    geometry: { type: "Point", coordinates: [76.3388, 9.4981] },
   },
   {
-    title: "Ramnagar Fort Palace",
+    title: "Munnar Tea Estate Bungalow",
     description:
-      "Riverside Mughal-style fort palace overlooking the ghats of the Ganges.",
+      "A colonial bungalow surrounded by rolling tea gardens and misty mountain mornings.",
     image: {
-      url: "https://loremflickr.com/1200/800/palace,architecture,exterior/all?lock=21",
-      filename: "wanderlust_DEV/ramnagar",
+      url: "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/munnar_tea_estate_bungalow",
     },
-    price: 7800,
-    location: "Varanasi",
+    price: 7500,
+    location: "Munnar",
     country: "India",
-    geometry: { type: "Point", coordinates: [83.0197, 25.281] },
+    geometry: { type: "Point", coordinates: [77.0595, 10.0889] },
   },
   {
-    title: "Kuchesar Fort Palace",
+    title: "Portuguese Villa Panjim",
     description:
-      "A restored 200-year-old fort with peacocks, mango orchards, and royal courtyards.",
+      "A pastel Indo-Portuguese villa in the Latin Quarter, steps from cafes and the river promenade.",
     image: {
-      url: "https://loremflickr.com/1200/800/luxury,mansion,building/all?lock=22",
-      filename: "wanderlust_DEV/kuchesar",
+      url: "https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/portuguese_villa_panjim",
+    },
+    price: 11000,
+    location: "Panaji",
+    country: "India",
+    geometry: { type: "Point", coordinates: [73.8278, 15.4909] },
+  },
+  {
+    title: "Himalayan Cottage Manali",
+    description:
+      "A cosy wooden cottage with fireplace and views of snow-capped Pir Panjal peaks.",
+    image: {
+      url: "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/himalayan_cottage_manali",
+    },
+    price: 5500,
+    location: "Manali",
+    country: "India",
+    geometry: { type: "Point", coordinates: [77.1887, 32.2396] },
+  },
+  {
+    title: "Rishikesh Riverside Cabin",
+    description:
+      "A peaceful cabin on the Ganges bank, perfect for yoga, rafting and sunrise meditation.",
+    image: {
+      url: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/rishikesh_riverside_cabin",
+    },
+    price: 4200,
+    location: "Rishikesh",
+    country: "India",
+    geometry: { type: "Point", coordinates: [78.2676, 30.0869] },
+  },
+  {
+    title: "Darjeeling Tea Cottage",
+    description:
+      "A charming hillside cottage amid tea terraces with views of Kanchenjunga.",
+    image: {
+      url: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/darjeeling_tea_cottage",
+    },
+    price: 6200,
+    location: "Darjeeling",
+    country: "India",
+    geometry: { type: "Point", coordinates: [88.2663, 27.041] },
+  },
+  {
+    title: "Shimla Colonial Cottage",
+    description:
+      "A British-era stone cottage with deodar views and a warm sit-out for evening tea.",
+    image: {
+      url: "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/shimla_colonial_cottage",
     },
     price: 6800,
-    location: "Bulandshahr",
+    location: "Shimla",
     country: "India",
-    geometry: { type: "Point", coordinates: [77.85, 28.4167] },
+    geometry: { type: "Point", coordinates: [77.1734, 31.1048] },
   },
   {
-    title: "Kanker Palace",
+    title: "Leh Mountain Lodge",
     description:
-      "A jungle palace retreat surrounded by dense forests and tribal heritage of Chhattisgarh.",
+      "A high-altitude lodge with Ladakhi hospitality, apricot orchards and stark mountain vistas.",
     image: {
-      url: "https://loremflickr.com/1200/800/hotel,bedroom,interior/all?lock=23",
-      filename: "wanderlust_DEV/kanker",
+      url: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/leh_mountain_lodge",
     },
     price: 7200,
-    location: "Kanker",
+    location: "Leh",
     country: "India",
-    geometry: { type: "Point", coordinates: [81.493, 20.2719] },
+    geometry: { type: "Point", coordinates: [77.5771, 34.1526] },
   },
   {
-    title: "Chomu Palace",
+    title: "Havelock Beach Hut",
     description:
-      "An 18th-century Rajput fort-palace with frescoed walls and courtyard dining under the stars.",
+      "A bamboo beach hut a few steps from turquoise water and coral reefs.",
     image: {
-      url: "https://loremflickr.com/1200/800/villa,resort,building/all?lock=24",
-      filename: "wanderlust_DEV/chomu",
+      url: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/havelock_beach_hut",
     },
-    price: 9900,
-    location: "Chomu",
+    price: 9500,
+    location: "Havelock Island",
     country: "India",
-    geometry: { type: "Point", coordinates: [75.7167, 27.1667] },
+    geometry: { type: "Point", coordinates: [92.9876, 12.0] },
   },
   {
-    title: "Fateh Prakash Palace",
+    title: "French Quarter Villa",
     description:
-      "Regal suites adorned with crystal chandeliers and views of Lake Pichola and the Aravallis.",
+      "A yellow-walled French colonial villa with a courtyard garden in White Town.",
     image: {
-      url: "https://loremflickr.com/1200/800/palace,courtyard,architecture/all?lock=25",
-      filename: "wanderlust_DEV/fateh_prakash",
+      url: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/french_quarter_villa",
     },
-    price: 20500,
-    location: "Udaipur",
+    price: 8800,
+    location: "Pondicherry",
     country: "India",
-    geometry: { type: "Point", coordinates: [73.6811, 24.5772] },
+    geometry: { type: "Point", coordinates: [79.8083, 11.9416] },
   },
   {
-    title: "Aina Mahal Heritage Rooms",
+    title: "Hampi Boulder Resort",
     description:
-      "Mirror-palace hospitality inspired by Kutchi and European craftsmanship.",
+      "Stone cottages set among ancient boulders, close to the Vijayanagara ruins.",
     image: {
-      url: "https://loremflickr.com/1200/800/palace,architecture,exterior/all?lock=26",
-      filename: "wanderlust_DEV/aina_mahal",
+      url: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/hampi_boulder_resort",
     },
-    price: 8700,
-    location: "Bhuj",
+    price: 4800,
+    location: "Hampi",
     country: "India",
-    geometry: { type: "Point", coordinates: [69.6669, 23.242] },
+    geometry: { type: "Point", coordinates: [76.46, 15.335] },
   },
   {
-    title: "Devi Garh Fort Palace",
+    title: "Coorg Coffee Plantation Stay",
     description:
-      "A minimalist-luxury fort palace perched in the Aravalli hills, blending heritage with modern design.",
+      "A planter's home inside a working coffee estate with waterfalls and forest trails.",
     image: {
-      url: "https://loremflickr.com/1200/800/luxury,mansion,building/all?lock=27",
-      filename: "wanderlust_DEV/devi_garh",
+      url: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/coorg_coffee_plantation_stay",
     },
-    price: 24500,
-    location: "Delwara",
+    price: 7000,
+    location: "Madikeri",
     country: "India",
-    geometry: { type: "Point", coordinates: [73.7167, 24.7167] },
+    geometry: { type: "Point", coordinates: [75.7382, 12.4244] },
   },
   {
-    title: "Pratap Vilas Palace",
+    title: "Ooty Colonial Bungalow",
     description:
-      "An Indo-Saracenic royal palace-turned-heritage hotel with lush gardens near the coast.",
+      "A fireplace-warmed bungalow with rose gardens in the Nilgiri hills.",
     image: {
-      url: "https://loremflickr.com/1200/800/hotel,bedroom,interior/all?lock=28",
-      filename: "wanderlust_DEV/pratap_vilas",
+      url: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/ooty_colonial_bungalow",
     },
-    price: 13800,
-    location: "Jamnagar",
+    price: 6400,
+    location: "Ooty",
     country: "India",
-    geometry: { type: "Point", coordinates: [70.0577, 22.4707] },
+    geometry: { type: "Point", coordinates: [76.695, 11.4102] },
   },
   {
-    title: "Sardar Samand Palace",
+    title: "Kodaikanal Lakeview Cottage",
     description:
-      "An Art Deco lakeside palace and former royal hunting lodge amid the Thar desert.",
+      "A quiet cottage overlooking the star-shaped lake and pine-covered slopes.",
     image: {
-      url: "https://loremflickr.com/1200/800/villa,resort,building/all?lock=29",
-      filename: "wanderlust_DEV/sardar_samand",
+      url: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/kodaikanal_lakeview_cottage",
     },
-    price: 12800,
-    location: "Sardar Samand",
+    price: 5900,
+    location: "Kodaikanal",
     country: "India",
-    geometry: { type: "Point", coordinates: [73.0333, 25.9833] },
+    geometry: { type: "Point", coordinates: [77.4892, 10.2381] },
   },
   {
-    title: "Balsamand Lake Palace",
+    title: "Jaisalmer Desert Camp",
     description:
-      "A 19th-century summer palace on a serene lake, surrounded by mango orchards.",
+      "Luxury tents among golden dunes with folk music and a starlit campfire.",
     image: {
-      url: "https://loremflickr.com/1200/800/palace,courtyard,architecture/all?lock=30",
-      filename: "wanderlust_DEV/balsamand",
+      url: "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/jaisalmer_desert_camp",
     },
-    price: 10200,
-    location: "Jodhpur",
+    price: 6000,
+    location: "Jaisalmer",
     country: "India",
-    geometry: { type: "Point", coordinates: [73.0479, 26.3378] },
+    geometry: { type: "Point", coordinates: [70.9083, 26.9157] },
   },
   {
-    title: "Bhainsrorgarh Fort Palace",
+    title: "Pushkar Heritage Tents",
     description:
-      "A cliff-edge fort overlooking the Chambal River, offering unmatched tranquility.",
+      "Royal-style tents beside the sacred lake, close to the famous camel fair grounds.",
     image: {
-      url: "https://loremflickr.com/1200/800/palace,architecture,exterior/all?lock=31",
-      filename: "wanderlust_DEV/bhainsrorgarh",
+      url: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/pushkar_heritage_tents",
     },
-    price: 8300,
-    location: "Chittorgarh",
+    price: 4500,
+    location: "Pushkar",
     country: "India",
-    geometry: { type: "Point", coordinates: [75.3167, 24.9833] },
+    geometry: { type: "Point", coordinates: [74.5513, 26.4899] },
   },
   {
-    title: "Vijay Vilas Palace",
+    title: "Mount Abu Hill Retreat",
     description:
-      "A Rajput-style beach palace amid the salt marshes of the Rann of Kutch, famed for its film shoots.",
+      "A cool hilltop retreat near Nakki Lake and the Dilwara temples.",
     image: {
-      url: "https://loremflickr.com/1200/800/luxury,mansion,building/all?lock=32",
-      filename: "wanderlust_DEV/vijay_vilas",
+      url: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/mount_abu_hill_retreat",
     },
-    price: 11500,
-    location: "Mandvi",
+    price: 6700,
+    location: "Mount Abu",
     country: "India",
-    geometry: { type: "Point", coordinates: [69.35, 22.8333] },
+    geometry: { type: "Point", coordinates: [72.7083, 24.5926] },
   },
   {
-    title: "Rajwada Heritage Suite",
+    title: "Ranthambore Tiger Lodge",
     description:
-      "A seven-storeyed Indo-European palace facade in the heart of the old city.",
+      "A jungle lodge on the edge of the national park with guided safari drives.",
     image: {
-      url: "https://loremflickr.com/1200/800/hotel,bedroom,interior/all?lock=33",
-      filename: "wanderlust_DEV/rajwada",
+      url: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/ranthambore_tiger_lodge",
     },
-    price: 7600,
-    location: "Indore",
+    price: 13500,
+    location: "Sawai Madhopur",
     country: "India",
-    geometry: { type: "Point", coordinates: [75.8577, 22.7177] },
+    geometry: { type: "Point", coordinates: [76.5026, 26.0173] },
   },
   {
-    title: "Chittorgarh Fort Palace Camp",
+    title: "Corbett Riverside Resort",
     description:
-      "Royal glamping beside the ruins of one of India's largest forts, rich in Rajput history.",
+      "Cottages along the Kosi river, surrounded by sal forest and wildlife.",
     image: {
-      url: "https://loremflickr.com/1200/800/villa,resort,building/all?lock=34",
-      filename: "wanderlust_DEV/chittorgarh",
+      url: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/corbett_riverside_resort",
     },
-    price: 6900,
-    location: "Chittorgarh",
+    price: 8200,
+    location: "Ramnagar",
     country: "India",
-    geometry: { type: "Point", coordinates: [74.63, 24.8887] },
+    geometry: { type: "Point", coordinates: [79.123, 29.53] },
   },
   {
-    title: "Kumbhalgarh Fort Palace",
+    title: "Khajuraho Temple View Stay",
     description:
-      "Stay near the second-longest wall in the world, wrapped around a majestic hilltop fort.",
+      "A boutique stay with courtyard views of the UNESCO-listed temple complex.",
     image: {
-      url: "https://loremflickr.com/1200/800/palace,courtyard,architecture/all?lock=35",
-      filename: "wanderlust_DEV/kumbhalgarh",
+      url: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/khajuraho_temple_view_stay",
     },
-    price: 10800,
-    location: "Rajsamand",
+    price: 5200,
+    location: "Khajuraho",
     country: "India",
-    geometry: { type: "Point", coordinates: [73.5833, 25.15] },
+    geometry: { type: "Point", coordinates: [79.9199, 24.8318] },
   },
   {
-    title: "Sajjan Garh Monsoon Palace View",
+    title: "Varanasi Ghat Haveli",
     description:
-      "Hilltop palace hospitality with sweeping sunset views over Udaipur's lakes.",
+      "An old haveli above the Ganga ghats, perfect for sunrise boat rides and evening aarti.",
     image: {
-      url: "https://loremflickr.com/1200/800/palace,architecture,exterior/all?lock=36",
-      filename: "wanderlust_DEV/sajjan_garh",
+      url: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/varanasi_ghat_haveli",
+    },
+    price: 5600,
+    location: "Varanasi",
+    country: "India",
+    geometry: { type: "Point", coordinates: [83.0104, 25.3109] },
+  },
+  {
+    title: "Amritsar Heritage Inn",
+    description:
+      "A warm heritage inn minutes from the Golden Temple, with Punjabi home cooking.",
+    image: {
+      url: "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/amritsar_heritage_inn",
+    },
+    price: 5800,
+    location: "Amritsar",
+    country: "India",
+    geometry: { type: "Point", coordinates: [74.8765, 31.62] },
+  },
+  {
+    title: "Kolkata Heritage Mansion",
+    description:
+      "A restored Bengal-era mansion with high ceilings, verandas and old-world charm.",
+    image: {
+      url: "https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/kolkata_heritage_mansion",
+    },
+    price: 7300,
+    location: "Kolkata",
+    country: "India",
+    geometry: { type: "Point", coordinates: [88.3639, 22.5726] },
+  },
+  {
+    title: "Marine Drive Sea-View Suite",
+    description:
+      "A modern suite overlooking the Queen's Necklace and the Arabian Sea.",
+    image: {
+      url: "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/marine_drive_sea_view_suite",
+    },
+    price: 15500,
+    location: "Mumbai",
+    country: "India",
+    geometry: { type: "Point", coordinates: [72.8219, 18.943] },
+  },
+  {
+    title: "Fort Kochi Heritage Homestay",
+    description:
+      "A Dutch-Portuguese era home near Chinese fishing nets and spice-scented lanes.",
+    image: {
+      url: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/fort_kochi_heritage_homestay",
+    },
+    price: 7900,
+    location: "Kochi",
+    country: "India",
+    geometry: { type: "Point", coordinates: [76.2423, 9.9658] },
+  },
+  {
+    title: "Gokarna Beach Villa",
+    description:
+      "A breezy villa near quiet crescent beaches and clifftop sunsets.",
+    image: {
+      url: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/gokarna_beach_villa",
+    },
+    price: 6100,
+    location: "Gokarna",
+    country: "India",
+    geometry: { type: "Point", coordinates: [74.3188, 14.5479] },
+  },
+  {
+    title: "Alibaug Seaside Villa",
+    description:
+      "A private villa with pool and sea breeze, an easy weekend escape from the city.",
+    image: {
+      url: "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/alibaug_seaside_villa",
     },
     price: 14000,
-    location: "Udaipur",
+    location: "Alibaug",
     country: "India",
-    geometry: { type: "Point", coordinates: [73.6544, 24.5497] },
+    geometry: { type: "Point", coordinates: [72.8722, 18.6414] },
   },
   {
-    title: "Dungarpur Udai Bilas Palace",
+    title: "Lonavala Hilltop Villa",
     description:
-      "A lakeside royal palace with hand-carved marble balconies and princely charm.",
+      "A monsoon-favourite villa with valley views, a bonfire deck and private pool.",
     image: {
-      url: "https://loremflickr.com/1200/800/luxury,mansion,building/all?lock=37",
-      filename: "wanderlust_DEV/udai_bilas",
+      url: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/lonavala_hilltop_villa",
     },
-    price: 12200,
-    location: "Dungarpur",
+    price: 10500,
+    location: "Lonavala",
     country: "India",
-    geometry: { type: "Point", coordinates: [73.7167, 23.8333] },
+    geometry: { type: "Point", coordinates: [73.4062, 18.7546] },
   },
   {
-    title: "Sheesh Mahal Orchha",
+    title: "Shore Temple Stay",
     description:
-      "A former royal residence turned heritage hotel within the historic Orchha fort complex.",
+      "A seaside stay a short walk from the 8th-century Shore Temple and rock carvings.",
     image: {
-      url: "https://loremflickr.com/1200/800/hotel,bedroom,interior/all?lock=38",
-      filename: "wanderlust_DEV/sheesh_mahal",
+      url: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/shore_temple_stay",
     },
-    price: 6500,
-    location: "Orchha",
+    price: 6600,
+    location: "Mahabalipuram",
     country: "India",
-    geometry: { type: "Point", coordinates: [78.6417, 25.3517] },
+    geometry: { type: "Point", coordinates: [80.1927, 12.6169] },
   },
   {
-    title: "Raj Mahal Palace Jaipur",
+    title: "Madurai Heritage Home",
     description:
-      "Former British Residency turned palace hotel with peacock gardens and vintage decor.",
+      "A Chettinad-style home close to Meenakshi Temple with traditional Tamil meals.",
     image: {
-      url: "https://loremflickr.com/1200/800/villa,resort,building/all?lock=39",
-      filename: "wanderlust_DEV/raj_mahal_jaipur",
+      url: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/madurai_heritage_home",
     },
-    price: 17000,
-    location: "Jaipur",
+    price: 5400,
+    location: "Madurai",
     country: "India",
-    geometry: { type: "Point", coordinates: [75.7833, 26.9167] },
+    geometry: { type: "Point", coordinates: [78.1198, 9.9195] },
   },
   {
-    title: "Nazim Palace",
+    title: "Chola Heritage Stay",
     description:
-      "Nizam-era palace hospitality set amid the historic charm of the old city of Hyderabad.",
+      "A courtyard stay near the Brihadeeswarar Temple, home of Tanjore art.",
     image: {
-      url: "https://loremflickr.com/1200/800/palace,courtyard,architecture/all?lock=40",
-      filename: "wanderlust_DEV/nazim_palace",
+      url: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/chola_heritage_stay",
     },
-    price: 9700,
+    price: 4900,
+    location: "Thanjavur",
+    country: "India",
+    geometry: { type: "Point", coordinates: [79.1378, 10.787] },
+  },
+  {
+    title: "Kaziranga Jungle Lodge",
+    description:
+      "A rainforest lodge for elephant safaris and one-horned rhino sightings.",
+    image: {
+      url: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/kaziranga_jungle_lodge",
+    },
+    price: 8700,
+    location: "Kaziranga",
+    country: "India",
+    geometry: { type: "Point", coordinates: [93.3713, 26.5775] },
+  },
+  {
+    title: "Gangtok Himalayan Retreat",
+    description:
+      "A mountain-view retreat with Sikkimese cuisine and monastery visits nearby.",
+    image: {
+      url: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/gangtok_himalayan_retreat",
+    },
+    price: 7100,
+    location: "Gangtok",
+    country: "India",
+    geometry: { type: "Point", coordinates: [88.6138, 27.3389] },
+  },
+  {
+    title: "Shillong Pine Cottage",
+    description:
+      "A pine-wrapped cottage near waterfalls and Umiam Lake, in the Scotland of the East.",
+    image: {
+      url: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/shillong_pine_cottage",
+    },
+    price: 5300,
+    location: "Shillong",
+    country: "India",
+    geometry: { type: "Point", coordinates: [91.8933, 25.5788] },
+  },
+  {
+    title: "Dharamshala Himalayan Villa",
+    description:
+      "A villa with Dhauladhar views near monasteries and deodar forests.",
+    image: {
+      url: "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/dharamshala_himalayan_villa",
+    },
+    price: 6300,
+    location: "Dharamshala",
+    country: "India",
+    geometry: { type: "Point", coordinates: [76.3234, 32.219] },
+  },
+  {
+    title: "Nainital Lake Cottage",
+    description:
+      "A cottage by the emerald Naini Lake with boat rides and mall road close by.",
+    image: {
+      url: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/nainital_lake_cottage",
+    },
+    price: 6000,
+    location: "Nainital",
+    country: "India",
+    geometry: { type: "Point", coordinates: [79.4591, 29.3919] },
+  },
+  {
+    title: "Mussoorie Colonial Manor",
+    description:
+      "A Queen of Hills manor with sweeping Doon Valley views and tea on the lawn.",
+    image: {
+      url: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/mussoorie_colonial_manor",
+    },
+    price: 7400,
+    location: "Mussoorie",
+    country: "India",
+    geometry: { type: "Point", coordinates: [78.0644, 30.4598] },
+  },
+  {
+    title: "Almora Himalayan Homestay",
+    description:
+      "A family-run stay with terrace views of Himalayan peaks and local Kumaoni meals.",
+    image: {
+      url: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/almora_himalayan_homestay",
+    },
+    price: 4600,
+    location: "Almora",
+    country: "India",
+    geometry: { type: "Point", coordinates: [79.6591, 29.5971] },
+  },
+  {
+    title: "Bhopal Lakeview Residency",
+    description:
+      "A comfortable residency overlooking the Upper Lake with Nawabi city history nearby.",
+    image: {
+      url: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/bhopal_lakeview_residency",
+    },
+    price: 6700,
+    location: "Bhopal",
+    country: "India",
+    geometry: { type: "Point", coordinates: [77.4126, 23.2599] },
+  },
+  {
+    title: "Mandu Heritage Stay",
+    description:
+      "A quiet stay among Afghan-style monuments and baobab trees of the ruined city.",
+    image: {
+      url: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/mandu_heritage_stay",
+    },
+    price: 4400,
+    location: "Mandu",
+    country: "India",
+    geometry: { type: "Point", coordinates: [75.4, 22.3333] },
+  },
+  {
+    title: "Gandikota Canyon Camp",
+    description:
+      "Tented camps on the rim of the Penna river gorge, India's Grand Canyon.",
+    image: {
+      url: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/gandikota_canyon_camp",
+    },
+    price: 3800,
+    location: "Gandikota",
+    country: "India",
+    geometry: { type: "Point", coordinates: [78.2833, 14.8167] },
+  },
+  {
+    title: "Lucknow Nawabi Haveli",
+    description:
+      "A restored haveli with Awadhi cuisine and the grace of Nawabi culture.",
+    image: {
+      url: "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/lucknow_nawabi_haveli",
+    },
+    price: 8000,
+    location: "Lucknow",
+    country: "India",
+    geometry: { type: "Point", coordinates: [80.9462, 26.8467] },
+  },
+  {
+    title: "Ganga Riverside Villa",
+    description:
+      "A calm riverside villa on the Ganga banks with a garden and sunset deck.",
+    image: {
+      url: "https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/ganga_riverside_villa",
+    },
+    price: 5000,
+    location: "Kanpur",
+    country: "India",
+    geometry: { type: "Point", coordinates: [80.3319, 26.4499] },
+  },
+  {
+    title: "Chandigarh Garden Villa",
+    description:
+      "A leafy villa near the Rock Garden and Sukhna Lake, in Le Corbusier's planned city.",
+    image: {
+      url: "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/chandigarh_garden_villa",
+    },
+    price: 7700,
+    location: "Chandigarh",
+    country: "India",
+    geometry: { type: "Point", coordinates: [76.7794, 30.7333] },
+  },
+  {
+    title: "Dalhousie Colonial Cottage",
+    description:
+      "A quiet Raj-era cottage surrounded by cedar forests and snow-peak views.",
+    image: {
+      url: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/dalhousie_colonial_cottage",
+    },
+    price: 5700,
+    location: "Dalhousie",
+    country: "India",
+    geometry: { type: "Point", coordinates: [76.97, 32.5387] },
+  },
+  {
+    title: "Rann Tent City",
+    description:
+      "Festival tents on the white salt desert, glowing under a full-moon night.",
+    image: {
+      url: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/rann_tent_city",
+    },
+    price: 8400,
+    location: "Dhordo",
+    country: "India",
+    geometry: { type: "Point", coordinates: [69.68, 23.83] },
+  },
+  {
+    title: "Diu Portuguese Beach House",
+    description:
+      "A coastal house near Nagoa Beach with Portuguese-era churches and forts nearby.",
+    image: {
+      url: "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/diu_portuguese_beach_house",
+    },
+    price: 7000,
+    location: "Diu",
+    country: "India",
+    geometry: { type: "Point", coordinates: [70.9874, 20.7144] },
+  },
+  {
+    title: "Chowmahalla Heritage Suite",
+    description:
+      "A Nizami-era heritage suite near the grand palace courtyards and Charminar bazaars.",
+    image: {
+      url: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80",
+      filename: "wanderlust_DEV/chowmahalla_heritage_suite",
+    },
+    price: 12500,
     location: "Hyderabad",
     country: "India",
-    geometry: { type: "Point", coordinates: [78.4747, 17.3616] },
+    geometry: { type: "Point", coordinates: [78.4717, 17.3578] },
   },
 ];
-
+ 
 module.exports = { data: sampleListings };
